@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine；
+        }
+
+        .test2 {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="dv"></p>
+    </div>
+    <div>
+        <input type="button" value="add" id="btn1">
+        <input type="button" value="remove" id="btn2">
+        <input type="button" value="切换" id="btn3">
+        <!-- <input type="button"> -->
+    </div>
+    <script>
+        // DOM元素操作
+        // document.querySelector('')
+        function $(id) {
+            return document.getElementById(id)
+        }
+        $('btn1').onclick = function () {
+            $('dv').classList.add('test')
+        }
+        $('btn2').onclick = function () {
+            $('dv').classList.remove('test')
+        }
+        $('btn3').onclick = function () {
+            $('dv').classList.toggle('test2')
+        }
+        const result = $('dv').classList.contains('test')
+        console.log(result)
+    </script>
+</body>
+
+</html>

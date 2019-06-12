@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, charset=utf-8, text/html">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="text"></div>
+    <input type="file" id="file1">
+    <input type="file" id="file2">
+    <script>
+    //上传css
+    //上传js
+    </script>
+    <script>
+        // 用户体验
+        // var state = window.navigator.onLine;
+        // if (state) {
+        //     alert('在线！')
+        // } else {
+        //     alert('oh!掉线啦')
+        // }
+        //实时监听网络状态
+        window.ononline = function () {
+            alert('上线啦')
+        }
+        window.onoffline = function () {
+            alert('断网了')
+        }
+        // 1.获取对象
+        // 2.创建读取对象
+        // 3.加载读取文件内容
+        const file1 = document.querySelector('#file1')
+        const file2 = document.querySelector('#file2')
+        file1.onchange = function () {
+            // console.log('en')
+            // 读取文件
+            const file = this.files[0]
+            console.log(file)
+            // 创建读取文件对象
+            let fileRead = new FileReader();
+            //开始读取
+            fileRead.readAsText(file, 'gb2312');
+            // 开始读取文件的加载事件
+            fileRead.onload = function () {
+                var result = fileRead.result;
+                console.log(result)
+                var style = document.createElement("style")
+                style.innerHTML = result
+                document.querySelector('head').appendChild(style)
+            }
+            // let result = fileRead.result;
+        }
+        file2.onchange = function () {
+            const file = this.files[0]
+            let fileread = new FileReader()
+            fileread.readAsText(file)
+            fileread.onload = function () {
+                var filereadjs = fileread.result
+                var script = document.createElement('script')
+                script.innerHTML = filereadjs
+                document.querySelector('body').appendChild(script)
+            }
+        }
+    </script>
+</body>
+
+</html>

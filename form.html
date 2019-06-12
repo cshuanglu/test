@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- autocomplete关闭智能提示 -->
+    <!-- novalidate关闭校验功能 -->
+    <form action="" method="get" autocomplete="off" id="fm">
+        姓名：<input type="text" value="" autofocus>
+        <!-- required必填属性 -->
+        邮箱：<input type="email" value="" required><br />
+        数字：<input type="number" value=""><br />
+        <!-- 滑块可用于上面视频播放拖放 -->
+        滑块：<input type="range" value=""><br />
+        颜色：<input type="color" value=""><br />
+        时间：<input type="time" value="">
+        <input type="submit" value="提交">
+    </form>
+    <!-- form提交时此输入框一起提交把form属性的值设为form标签中的id值 -->
+    表单外：<input type="text" value="" name="name" form="fm" required><br />
+    list:<input type="text" value="" list="url_list">
+    <!-- dataList标签需要有自己的id，配合List属性才有数据列表效果 -->
+    <datalist id="url_list">
+        <option value="https://www.baidu.com">baidu</option>
+        <option value="guge">guge</option>
+</body>
+
+</html>

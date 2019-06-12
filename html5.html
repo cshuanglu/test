@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine；
+        }
+
+        .test2 {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 谷歌播放autoplay无效可以加一个muted静音处理 -->
+    <!-- <audio src="./assets/毛不易 - 东北民谣 (Live).mp3" autoplay controls muted></audio> -->
+    <!-- loop重复播放 -->
+    <!-- contrals显示播放控件 -->
+    <audio src="./assets/毛不易 - 东北民谣 (Live).mp3" autoplay controls></audio>
+    <!-- 谷歌需要添加muted属性 -->
+    <video src="./assets/儿童歌曲 - Brush Teeth Song - MV版.mkv" controls autoplay muted></video>
+    <!-- 兼容浏览器播放视频格式 -->
+    <video autoplay controls loop>
+        <source src="">
+        <source src="">
+        对不起您的浏览器不支持，请升级！
+    </video>
+    <!-- autocomplete关闭智能提示 -->
+    <!-- novalidate关闭校验功能 -->
+    <form action="" method="get" autocomplete="off" id="fm">
+        姓名：<input type="text" value="" autofocus>
+        <!-- required必填属性 -->
+        邮箱：<input type="email" value="" required><br />
+        数字：<input type="number" value=""><br />
+        <!-- 滑块可用于上面视频播放拖放 -->
+        滑块：<input type="range" value=""><br />
+        颜色：<input type="color" value=""><br />
+        时间：<input type="time" value="">
+        <input type="submit" value="提交">
+    </form>
+    <!-- form提交时此输入框一起提交把form属性的值设为form标签中的id值 -->
+    表单外：<input type="text" value="" name="name" form="fm" required><br />
+    list:<input type="text" value="" list="url_list">
+    <!-- dataList标签需要有自己的id，配合List属性才有数据列表效果 -->
+    <datalist id="url_list">
+        <option value="https://www.baidu.com">baidu</option>
+        <option value="guge">guge</option>
+    </datalist>
+    <div>
+        <p id="dv"></p>
+    </div>
+    <div>
+        <input type="button" value="add" id="btn1">
+        <input type="button" value="remove" id="btn2">
+        <input type="button" value="切换" id="btn3">
+        <!-- <input type="button"> -->
+    </div>
+    <script>
+        // DOM元素操作
+        // document.querySelector('')
+        function $(id) {
+            return document.getElementById(id)
+        }
+        $('btn1').onclick = function () {
+            $('dv').classList.add('test')
+        }
+        $('btn2').onclick = function () {
+            $('dv').classList.remove('test')
+        }
+        $('btn3').onclick = function () {
+            $('dv').classList.toggle('test2')
+        }
+        const result = $('dv').classList.contains('test')
+        console.log(result)
+    </script>
+</body>
+
+</html>

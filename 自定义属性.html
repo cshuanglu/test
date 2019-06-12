@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dv" data-name="蜗牛" data-age="1"></div>
+    <nav>
+        <a href="javascript:void(0)" data-cont="local">小白</a>
+        <a href="javascript:void(0)" data-cont="global">菜呀</a>
+        <a href="javascript:void(0)" data-cont="sports">哎</a>
+    </nav>
+    <section class="cont" id="local">
+        <ol>
+            <li>哼</li>
+            <li>哈</li>
+            <li>吼吼</li>
+        </ol>
+    </section>
+    <section class="cont" id="global">
+        <ol>
+            <li>ya</li>
+            <li>ye</li>
+            <li>o</li>
+        </ol>
+    </section>
+    <script>
+        //获取自定义属性
+        const dv = document.querySelector("#dv").dataset
+        dv.height = "1"
+        console.log(dv)
+    </script>
+</body>
+
+</html>
